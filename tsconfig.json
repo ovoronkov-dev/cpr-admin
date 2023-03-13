@@ -20,7 +20,8 @@
       "~firebase/*": ["src/firebase/*"],
       "~views/*": ["src/views/*"],
       "~layouts/*": ["src/layouts/*"],
-      "~components": ["src/components/*"]
+      "~components/*": ["src/components/*"],
+      "~styles/*": ["src/styles/*"]
     }
   },
   "include": ["src"],
