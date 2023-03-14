@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
-import { Navigate, Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
 import { FullpageLoading } from "~components/FullpageLoading";
 import { firebaseAuth } from "~firebase/index";
 import { DRAWER_WIDTH } from "~styles/theme";
@@ -28,12 +28,9 @@ export const AuthLayout = () => {
 
   return (
     <Box display="flex">
-      <AppBar
-        position="fixed"
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      >
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component={Link} to="/" color="white" sx={{ textDecoration: "none" }}>
             CPR Admin
           </Typography>
         </Toolbar>

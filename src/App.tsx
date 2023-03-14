@@ -5,6 +5,7 @@ import { defaultTheme } from "~styles/theme";
 import { Dashboard } from "~views/Dashboard/Dashboard";
 import { Editor } from "~views/Editor/Editor";
 import { Login } from "~views/Login";
+import { Viewer } from "~views/Viewer/Viewer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<AuthLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="editor" element={<Editor />} />
+          <Route path="viewer/:id" element={<Viewer />} />
         </Route>
         <Route path="/login" element={<Login />} />
       </Routes>

@@ -60,7 +60,7 @@ export const Editor = () => {
       <form onSubmit={form.handleSubmit(handleSubmit)}>
         <Grid container alignItems="center">
           <Grid item xs={6} container alignItems="center">
-            <Typography variant="h2">Text</Typography>
+            <Typography variant="h2">Створити опитування</Typography>
           </Grid>
           <Grid item xs={6} container justifyContent="flex-end" alignItems="center">
             <Button

@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { PollModel } from "~core/models";
 import { getPollDocument } from "~firebase/docs/poll-document";
 
-export const usePollDocument = (id?: string) => {
+type UsePollDocumentReturnType = [PollModel | null, boolean, FirestoreError | null];
+
+export const usePollDocument = (id?: string): UsePollDocumentReturnType => {
   const [document, setDocument] = useState<PollModel | null>(null);
   const [error, setError] = useState<FirestoreError | null>(null);
   const [loading, setLoading] = useState<boolean>(false);

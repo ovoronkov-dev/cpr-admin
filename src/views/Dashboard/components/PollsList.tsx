@@ -1,12 +1,4 @@
-import {
-  Button,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-} from "@mui/material";
+import { Button, Paper, Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { Link } from "react-router-dom";
 import { PollModel } from "~core/models";
@@ -23,13 +15,7 @@ const DashboardPollsListRow = ({ id, data }: DashboardPollsListRowProps) => (
     <TableCell>{data.description}</TableCell>
     <TableCell>{data.variants.length}</TableCell>
     <TableCell>
-      <Button
-        size="small"
-        variant="contained"
-        color="secondary"
-        component={Link}
-        to={`/polls/${id}`}
-      >
+      <Button size="small" variant="contained" color="secondary" component={Link} to={`/viewer/${id}`}>
         Переглянути
       </Button>
     </TableCell>
@@ -53,11 +39,7 @@ export const DashboardPollsList = () => {
       </TableHead>
       <TableBody>
         {snapshot?.docs.map((document) => (
-          <DashboardPollsListRow
-            key={document.id}
-            id={document.id}
-            data={document.data()}
-          />
+          <DashboardPollsListRow key={document.id} id={document.id} data={document.data()} />
         ))}
       </TableBody>
     </Table>
