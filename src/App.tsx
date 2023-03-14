@@ -2,7 +2,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import { AuthLayout } from "~layouts/AuthLayout";
 import { defaultTheme } from "~styles/theme";
-import { Dashboard } from "~views/Dashboard";
+import { Dashboard } from "~views/Dashboard/Dashboard";
 import { Login } from "~views/Login";
 
 function App() {

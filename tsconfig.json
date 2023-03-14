@@ -21,7 +21,8 @@
       "~views/*": ["src/views/*"],
       "~layouts/*": ["src/layouts/*"],
       "~components/*": ["src/components/*"],
-      "~styles/*": ["src/styles/*"]
+      "~styles/*": ["src/styles/*"],
+      "~core/*": ["src/core/*"]
     }
   },
   "include": ["src"],

@@ -7,6 +7,7 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Paper,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -64,9 +65,11 @@ export const AuthLayout = () => {
         </Box>
       </Drawer>
 
-      <Box component="main" sx={{ flexGrow: 1, p: 2 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 1 }}>
         <Toolbar />
-        <Outlet />
+        <Paper sx={{ p: 2 }}>
+          <Outlet />
+        </Paper>
       </Box>
     </Box>
   );
