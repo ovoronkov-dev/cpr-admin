@@ -1,4 +1,4 @@
-import { collection, FirestoreDataConverter } from "firebase/firestore";
+import { doc, FirestoreDataConverter, getDoc } from "firebase/firestore";
 import { PollModel } from "~core/models";
 import { firebaseDb } from "..";
 
@@ -7,5 +7,5 @@ const converter: FirestoreDataConverter<PollModel> = {
   fromFirestore: (snapshot) => snapshot.data() as PollModel,
 };
 
-export const getPollsCollection = () =>
-  collection(firebaseDb, "polls").withConverter(converter);
+export const getPollDocument = (id: string) =>
+  getDoc(doc(firebaseDb, "polls", id).withConverter(converter));

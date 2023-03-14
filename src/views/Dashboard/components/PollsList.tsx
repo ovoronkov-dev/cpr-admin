@@ -10,7 +10,7 @@ import {
 import { useCollection } from "react-firebase-hooks/firestore";
 import { Link } from "react-router-dom";
 import { PollModel } from "~core/models";
-import { pollsCollection } from "~firebase/collections/polls-collection";
+import { getPollsCollection } from "~firebase/collections/polls-collection";
 
 interface DashboardPollsListRowProps {
   id: string;
@@ -37,7 +37,7 @@ const DashboardPollsListRow = ({ id, data }: DashboardPollsListRowProps) => (
 );
 
 export const DashboardPollsList = () => {
-  const [snapshot, loading, error] = useCollection(pollsCollection());
+  const [snapshot, loading, error] = useCollection(getPollsCollection());
 
   console.log(snapshot);
 

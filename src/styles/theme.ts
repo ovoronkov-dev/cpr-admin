@@ -28,4 +28,8 @@ export const defaultTheme = createTheme({
       fontWeight: "bold",
     },
   },
+
+  shape: {
+    borderRadius: 8,
+  },
 });

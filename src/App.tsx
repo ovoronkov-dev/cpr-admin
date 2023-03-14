@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { AuthLayout } from "~layouts/AuthLayout";
 import { defaultTheme } from "~styles/theme";
 import { Dashboard } from "~views/Dashboard/Dashboard";
+import { Editor } from "~views/Editor/Editor";
 import { Login } from "~views/Login";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AuthLayout />}>
           <Route index element={<Dashboard />} />
+          <Route path="editor" element={<Editor />} />
         </Route>
         <Route path="/login" element={<Login />} />
       </Routes>
