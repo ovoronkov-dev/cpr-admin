@@ -2,6 +2,7 @@ import {
   Alert,
   AppBar,
   Box,
+  Button,
   Drawer,
   List,
   ListItem,
@@ -19,6 +20,7 @@ import { DRAWER_WIDTH } from "~styles/theme";
 
 export const AuthLayout = () => {
   const [user, loading, error] = useAuthState(firebaseAuth);
+  const [signOut] = useSignOut(firebaseAuth);
 
   if (!user && !loading && !error) return <Navigate to="/login" />;
 
@@ -30,9 +32,20 @@ export const AuthLayout = () => {
     <Box display="flex">
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
-          <Typography variant="h6" noWrap component={Link} to="/" color="white" sx={{ textDecoration: "none" }}>
+          <Typography
+            variant="h6"
+            noWrap
+            component={Link}
+            to="/"
+            color="white"
+            sx={{ textDecoration: "none", flexGrow: 1 }}
+          >
             CPR Admin
           </Typography>
+
+          <Button color="secondary" variant="contained" onClick={signOut}>
+            Вийти
+          </Button>
         </Toolbar>
       </AppBar>
 
@@ -51,13 +64,11 @@ export const AuthLayout = () => {
 
         <Box sx={{ overflow: "auto" }}>
           <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
+            <ListItem>
+              <Button variant="contained" color="primary" component={Link} to="/editor" fullWidth>
+                Створити опитування
+              </Button>
+            </ListItem>
           </List>
         </Box>
       </Drawer>
